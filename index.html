@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Login Romântico</title>
+<style>
+  body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000000, #500049, #fad0c4);
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    transition: background 1s ease;
+  }
+
+  .login-container {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px blueviolet;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  h1 {
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px #ff0095;
+  }
+
+  input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 1em;
+  }
+
+  .show-password {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 5px;
+    font-size: 0.9em;
+    text-decoration: underline;
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #ff0095;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  button:hover {
+    background: #ff66b3;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .error {
+    color: #ffcccc;
+    margin-top: 10px;
+  }
+
+  .mensagem, .mensagem-next {
+    display: none;
+    text-align: center;
+    max-width: 600px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px #ff66b3, 0 0 60px #ff0095;
+    background: rgba(255,255,255,0.2);
+    color: #fff;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .mensagem h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px #ff0095;
+  }
+
+  .mensagem p, .mensagem-next p {
+    font-size: 1.2em;
+    line-height: 1.6em;
+    text-shadow: 1px 1px 5px #ff0095;
+  }
+
+  iframe {
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+
+  .actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+</style>
+</head>
+<body>
+  <div class="login-container" id="loginBox">
+    <h1>💖 Entre e me desculpe 💖</h1>
+    <input type="text" id="username" placeholder="Nome de Usuário"><br>
+    <div style="position: relative; display: inline-block;">
+      <input type="password" id="password" placeholder="Senha">
+      <button type="button" class="show-password" onclick="togglePassword()">Mostrar</button>
+    </div><br>
+    <button onclick="checkLogin()">Entrar</button>
+    <div class="error" id="errorMsg"></div>
+  </div>
+
+  <div class="mensagem" id="mensagem">
+    <h1>Minha Garotinha, Minha Francesinha 💖</h1>
+    <p>
+      Queria começar dizendo o quanto você é especial para mim. Cada momento ao seu lado é um pedaço do paraíso, e eu não consigo imaginar meus dias sem o seu sorriso, a sua voz doce que acalma meu coração.
+    </p>
+    <p>
+      Sei que às vezes meu jeito de agir não é o melhor, e que posso ter errado em algumas atitudes. Quero te pedir desculpas, de coração, por cada momento em que não estive à altura do que você merece. Estou tentando todos os dias ser alguém melhor, por nós e por você.
+    </p>
+    <p>
+      Amo você mais do que palavras podem expressar. Amo seu jeito de ser, sua risada, seu olhar que me faz perder o fôlego. Prometo fazer o possível para te fazer feliz e que você se sinta sempre amada.
+    </p>
+    <p>Eu te amo, minha garotinha minha francesinha e a dona do meu sorriso 💕</p>
+
+    <!-- Player do Spotify -->
+    <iframe src="https://open.spotify.com/embed/track/7zThUTdmcrO1GHGnSrJsMJ" width="100%" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+
+    <div class="actions">
+      <button id="proximoBtn" onclick="showNext()">Próximo so abra se quiser desculpa...</button>
+    </div>
+  </div>
+
+  <div class="mensagem-next" id="mensagem2">
+    <h1>Desculpa... 💔</h1>
+    <p>
+      Resolvi por de repente — ando percebendo ou achando que não sou importante nem nada , pode ser coisa da minha cabeça, mais sla mesmo. Se não for, não tem problema.
+    </p>
+    <p>
+      Eu acabei de desistir de mim também... como uma coisa que acho que você quer, vou parar de lhe incomodar. Vou parar de mandar mensagens sempre, vou parar com tudo aquilo que te incomoda — desculpa ae, eu juro que tentei.
+    </p>
+    <p>
+      Mais sla, desisti de mim e do meu jeito ruim que não te faz feliz. Enfim, desculpa qualquer coisa. Eu vou sempre tar aqui se precisar. Não quero terminar com você — sla isso acabaria mais com minha vida.
+    </p>
+    <p>
+      Enfim, desculpa por ser quem eu sou do jeito que eu sou. Só queria fazer o melhor por você e acabei... sla, deixando você brava às vezes.
+    </p>
+    <div class="actions">
+      <button onclick="voltar()">Voltar</button>
+    </div>
+  </div>
+
+<script>
+  function checkLogin() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+    const errorMsg = document.getElementById('errorMsg');
+    const loginBox = document.getElementById('loginBox');
+    const mensagem = document.getElementById('mensagem');
+
+    if(username.trim() === "Maite" && password === "minha garotinha e minha francesinha") {
+      loginBox.style.display = "none";
+      mensagem.style.display = "block";
+      errorMsg.textContent = "";
+    } else {
+      errorMsg.textContent = "Usuário ou senha incorretos pensei que soubesse oq você e minha... 💔";
+    }
+  }
+
+  function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const btn = document.querySelector('.show-password');
+    if(passwordInput.type === "password") {
+      passwordInput.type = "text";
+      btn.textContent = "Esconder";
+    } else {
+      passwordInput.type = "password";
+      btn.textContent = "Mostrar";
+    }
+  }
+
+  function showNext() {
+    const mensagem = document.getElementById('mensagem');
+    const mensagem2 = document.getElementById('mensagem2');
+    mensagem.style.display = 'none';
+    mensagem2.style.display = 'block';
+  }
+
+  function voltar() {
+    const mensagem = document.getElementById('mensagem');
+    const mensagem2 = document.getElementById('mensagem2');
+    mensagem2.style.display = 'none';
+    mensagem.style.display = 'block';
+  }
+</script>
+</body>
+</html>
